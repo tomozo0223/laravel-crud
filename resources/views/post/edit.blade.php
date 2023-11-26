@@ -11,7 +11,7 @@
 <body>
     <h1>更新ページ</h1>
     <hr>
-    {{-- <form action="{{ route('post.update') }}" method="POST"> --}}
+    <form action="{{ route('post.update', $post) }}" method="POST">
         @csrf
         @method('PUT')
         <label for="title">タイトル:</label>
