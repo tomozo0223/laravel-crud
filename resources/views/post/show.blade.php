@@ -13,6 +13,12 @@
     <hr>
     <h2>{{ $post->title }}</h2>
     <p>{{ $post->body }}</p>
+    <a href="{{ route('post.edit', $post) }}"><button>更新</button></a>
+    <form action="{{ route('post.destroy', $post) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button>削除</button>
+    </form>
     <hr>
 </body>
 
