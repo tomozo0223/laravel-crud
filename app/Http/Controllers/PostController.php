@@ -27,7 +27,7 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        return to_route('post.index');
+        return to_route('post.index')->with('message', '投稿しました。');
     }
 
     public function show(Post $post)
@@ -46,7 +46,7 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->save();
 
-        return to_route('post.index', compact('post'));
+        return to_route('post.index', compact('post'))->with('message', '更新しました。');
     }
 
     public function destroy(Post $post)
