@@ -27,4 +27,9 @@ class PostController extends Controller
 
         return to_route('post.index');
     }
+
+    public function edit(Post $post)
+    {
+        return view('post.edit', compact('post'));
+    }
 }
