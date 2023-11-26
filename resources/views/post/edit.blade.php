@@ -10,6 +10,9 @@
 
 <body>
     <h1>更新ページ</h1>
+    @if (session('message'))
+        {{ session('message') }}
+    @endif
     <hr>
     <form action="{{ route('post.update', $post) }}" method="POST">
         @csrf

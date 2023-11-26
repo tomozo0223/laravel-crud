@@ -10,6 +10,9 @@
 
 <body>
     <h1>一覧ページ</h1>
+    @if (session('message'))
+        {{ session('message') }}
+    @endif
     @foreach ($posts as $post)
         <a href="{{ route('post.show', $post) }}">
             <h2>{{ $post->title }}</h2>
