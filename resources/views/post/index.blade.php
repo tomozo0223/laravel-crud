@@ -11,7 +11,9 @@
 <body>
     <h1>一覧ページ</h1>
     @foreach ($posts as $post)
-        <h2>{{ $post->title }}</h2>
+        <a href="{{ route('post.show', $post) }}">
+            <h2>{{ $post->title }}</h2>
+        </a>
         <p>{{ $post->body }}</p>
         <hr>
     @endforeach
