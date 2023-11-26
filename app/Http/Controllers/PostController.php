@@ -46,4 +46,11 @@ class PostController extends Controller
 
         return to_route('post.index', compact('post'));
     }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return to_route('post.index');
+    }
 }
