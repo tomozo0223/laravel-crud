@@ -32,4 +32,13 @@ class PostController extends Controller
     {
         return view('post.edit', compact('post'));
     }
+
+    public function update(Request $request, Post $post)
+    {
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+
+        return to_route('post.index', compact('post'));
+    }
 }
